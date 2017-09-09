@@ -1,0 +1,30 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "gost",
+            "otherEntityName": "gost",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "ocena"
+        },
+        {
+            "relationshipName": "restoran",
+            "otherEntityName": "restoran",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "ocena",
+            "fieldType": "Double"
+        }
+    ],
+    "changelogDate": "20170909205343",
+    "entityTableName": "ocena",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

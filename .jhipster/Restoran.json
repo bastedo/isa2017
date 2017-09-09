@@ -1,0 +1,96 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "konfiguracijaStolova",
+            "otherEntityName": "konfiguracijaStolova",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "restoran"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "jeovnik",
+            "otherEntityName": "jelovnik",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "restoran"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "kartaPica",
+            "otherEntityName": "kartaPica",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "restoran"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "ocena",
+            "otherEntityName": "ocena",
+            "otherEntityRelationshipName": "restoran"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "pozivZaPrikupljanje",
+            "otherEntityName": "pozivZaPrikupljanjeN",
+            "otherEntityRelationshipName": "restoran"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "rezervacija",
+            "otherEntityName": "rezervacija",
+            "otherEntityRelationshipName": "restoran"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "menadzeriRestorana",
+            "otherEntityName": "menadzerRestorana",
+            "otherEntityRelationshipName": "menadzerZaRestoran"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "zaposleniRestorana",
+            "otherEntityName": "zaposleni",
+            "otherEntityRelationshipName": "radiURestoranu"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "rasporedSmenaZaSankere",
+            "otherEntityName": "rasporedSmenaZaSankere",
+            "otherEntityRelationshipName": "restoran"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "rasporedSmenaZaKonobare",
+            "otherEntityName": "rasporedSmenaZaKonobare",
+            "otherEntityRelationshipName": "restoran"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "rasporedSmenaZaKuvare",
+            "otherEntityName": "rasporedSmenaZaKuvare",
+            "otherEntityRelationshipName": "restoran"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "naziv",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "vrsta",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "ocenaRestorana",
+            "fieldType": "Double"
+        }
+    ],
+    "changelogDate": "20170909205344",
+    "entityTableName": "restoran",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

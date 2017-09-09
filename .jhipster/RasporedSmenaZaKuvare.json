@@ -1,0 +1,37 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "zaposleni",
+            "otherEntityName": "zaposleni",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipName": "restoran",
+            "otherEntityName": "restoran",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "vrstaSmene",
+            "fieldType": "VrstaSmene",
+            "fieldValues": "PRVA,DRUGA,TRECA"
+        },
+        {
+            "fieldName": "start",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "end",
+            "fieldType": "ZonedDateTime"
+        }
+    ],
+    "changelogDate": "20170909205341",
+    "entityTableName": "raspored_smena_za_kuvare",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

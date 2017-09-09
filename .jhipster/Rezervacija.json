@@ -1,0 +1,54 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "stol",
+            "otherEntityName": "stol",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "porudzbina",
+            "otherEntityName": "porudzbina",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "zaRezervaciju"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "restoran",
+            "otherEntityName": "restoran",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "rezervisao",
+            "otherEntityName": "gost",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "startDate",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "endDate",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "ocenjeno",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "potvrdjeno",
+            "fieldType": "Boolean"
+        }
+    ],
+    "changelogDate": "20170909205355",
+    "entityTableName": "rezervacija",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

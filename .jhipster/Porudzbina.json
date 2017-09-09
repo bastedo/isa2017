@@ -1,0 +1,47 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "jelo",
+            "otherEntityName": "jelo",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipName": "pice",
+            "otherEntityName": "pice",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "zaRezervaciju",
+            "otherEntityName": "rezervacija",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "porudzbina"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "prihvacenoPice",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "spremnoPice",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "prihvacenaHrana",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "spremnaHrana",
+            "fieldType": "Boolean"
+        }
+    ],
+    "changelogDate": "20170909205354",
+    "entityTableName": "porudzbina",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

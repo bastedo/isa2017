@@ -1,0 +1,106 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myZaposleniLabel">Create or edit a Zaposleni</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.zaposleni.id">
+            <label for="id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.zaposleni.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_ime">Ime</label>
+            <input type="text" class="form-control" name="ime" id="field_ime"
+                    ng-model="vm.zaposleni.ime"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_vrstaZaposlenja">Vrsta Zaposlenja</label>
+            <select class="form-control" name="vrstaZaposlenja" ng-model="vm.zaposleni.vrstaZaposlenja" id="field_vrstaZaposlenja">
+                <option value="KONOBAR">KONOBAR</option>
+                <option value="SANKER">SANKER</option>
+                <option value="KUVAR">KUVAR</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_zaduzenjeZaSegment">Zaduzenje Za Segment</label>
+            <select class="form-control" name="zaduzenjeZaSegment" ng-model="vm.zaposleni.zaduzenjeZaSegment" id="field_zaduzenjeZaSegment">
+                <option value="ZA_PUSACE">ZA_PUSACE</option>
+                <option value="OTVORENA_BASTA">OTVORENA_BASTA</option>
+                <option value="ZATVORENA_BASTA">ZATVORENA_BASTA</option>
+                <option value="ZA_NEPUSACE">ZA_NEPUSACE</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_prezime">Prezime</label>
+            <input type="text" class="form-control" name="prezime" id="field_prezime"
+                    ng-model="vm.zaposleni.prezime"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_email">Email</label>
+            <input type="text" class="form-control" name="email" id="field_email"
+                    ng-model="vm.zaposleni.email"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_lozinka">Lozinka</label>
+            <input type="text" class="form-control" name="lozinka" id="field_lozinka"
+                    ng-model="vm.zaposleni.lozinka"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_datumRodjenja">Datum Rodjenja</label>
+                <div class="input-group">
+                    <input id="field_datumRodjenja" type="text" class="form-control" name="datumRodjenja" uib-datepicker-popup="{{dateformat}}" ng-model="vm.zaposleni.datumRodjenja" is-open="vm.datePickerOpenStatus.datumRodjenja"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('datumRodjenja')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_konfekciskiBroj">Konfekciski Broj</label>
+            <input type="number" class="form-control" name="konfekciskiBroj" id="field_konfekciskiBroj"
+                    ng-model="vm.zaposleni.konfekciskiBroj"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_velicinaObuce">Velicina Obuce</label>
+            <input type="number" class="form-control" name="velicinaObuce" id="field_velicinaObuce"
+                    ng-model="vm.zaposleni.velicinaObuce"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_firstLogin">First Login</label>
+                <input type="checkbox" name="firstLogin" id="field_firstLogin"
+                          ng-model="vm.zaposleni.firstLogin"/>
+        </div>
+
+        <div class="form-group">
+            <label for="field_konfiguracijaStolova">Konfiguracija Stolova</label>
+            <select class="form-control" id="field_konfiguracijaStolova" name="konfiguracijaStolova" ng-model="vm.zaposleni.konfiguracijaStolova" ng-options="konfiguracijaStolova as konfiguracijaStolova.id for konfiguracijaStolova in vm.konfiguracijastolova | orderBy:'id' track by konfiguracijaStolova.id">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="field_radiURestoranu">Radi U Restoranu</label>
+            <select class="form-control" id="field_radiURestoranu" name="radiURestoranu" ng-model="vm.zaposleni.radiURestoranu" ng-options="restoran as restoran.id for restoran in vm.restorans track by restoran.id">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span>Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span>Save</span>
+        </button>
+    </div>
+</form>

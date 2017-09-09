@@ -1,0 +1,92 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "konfiguracijaStolova",
+            "otherEntityName": "konfiguracijaStolova",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "zaposleni"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "rasporedSmenaZaSankere",
+            "otherEntityName": "rasporedSmenaZaSankere",
+            "otherEntityRelationshipName": "zaposleni"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "rasporedSmenaZaKonobare",
+            "otherEntityName": "rasporedSmenaZaKonobare",
+            "otherEntityRelationshipName": "zaposleni"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "rasporedSmenaZaKuvare",
+            "otherEntityName": "rasporedSmenaZaKuvare",
+            "otherEntityRelationshipName": "zaposleni"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "racuni",
+            "otherEntityName": "racun",
+            "otherEntityRelationshipName": "naplatio"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "radiURestoranu",
+            "otherEntityName": "restoran",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "ime",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "vrstaZaposlenja",
+            "fieldType": "VrstaZaposlenja",
+            "fieldValues": "KONOBAR,SANKER,KUVAR"
+        },
+        {
+            "fieldName": "zaduzenjeZaSegment",
+            "fieldType": "Segmenat",
+            "fieldValues": "ZA_PUSACE,OTVORENA_BASTA,ZATVORENA_BASTA,ZA_NEPUSACE"
+        },
+        {
+            "fieldName": "prezime",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "email",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "lozinka",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "datumRodjenja",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "konfekciskiBroj",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "velicinaObuce",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "firstLogin",
+            "fieldType": "Boolean"
+        }
+    ],
+    "changelogDate": "20170909205339",
+    "entityTableName": "zaposleni",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

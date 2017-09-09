@@ -1,0 +1,43 @@
+
+<div>
+    <h2><span>Zahtev Za Prijateljstvo</span> {{vm.zahtevZaPrijateljstvo.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span>Id Podnosioca Zahteva</span></dt>
+        <dd>
+            <span>{{vm.zahtevZaPrijateljstvo.idPodnosiocaZahteva}}</span>
+        </dd>
+        <dt><span>Postalan Zahtev</span></dt>
+        <dd>
+            <span>{{vm.zahtevZaPrijateljstvo.postalanZahtev | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span>Prihvacen Zahtev</span></dt>
+        <dd>
+            <span>{{vm.zahtevZaPrijateljstvo.prihvacenZahtev | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span>Prihvacen</span></dt>
+        <dd>
+            <span>{{vm.zahtevZaPrijateljstvo.prihvacen}}</span>
+        </dd>
+        <dt><span>Odbijen</span></dt>
+        <dd>
+            <span>{{vm.zahtevZaPrijateljstvo.odbijen}}</span>
+        </dd>
+        <dt><span>Gost</span></dt>
+        <dd>
+            <a ui-sref="gost-detail({id:vm.zahtevZaPrijateljstvo.gost.id})">{{vm.zahtevZaPrijateljstvo.gost.id}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+
+    <button type="button" ui-sref="zahtev-za-prijateljstvo-detail.edit({id:vm.zahtevZaPrijateljstvo.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down"> Edit</span>
+    </button>
+</div>

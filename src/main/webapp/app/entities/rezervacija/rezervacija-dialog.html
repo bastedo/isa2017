@@ -1,0 +1,80 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myRezervacijaLabel">Create or edit a Rezervacija</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.rezervacija.id">
+            <label for="id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.rezervacija.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_startDate">Start Date</label>
+                <div class="input-group">
+                    <input id="field_startDate" type="text" class="form-control" name="startDate" datetime-picker="{{dateformat}}" ng-model="vm.rezervacija.startDate" is-open="vm.datePickerOpenStatus.startDate"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('startDate')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_endDate">End Date</label>
+                <div class="input-group">
+                    <input id="field_endDate" type="text" class="form-control" name="endDate" datetime-picker="{{dateformat}}" ng-model="vm.rezervacija.endDate" is-open="vm.datePickerOpenStatus.endDate"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('endDate')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_ocenjeno">Ocenjeno</label>
+                <input type="checkbox" name="ocenjeno" id="field_ocenjeno"
+                          ng-model="vm.rezervacija.ocenjeno"/>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_potvrdjeno">Potvrdjeno</label>
+                <input type="checkbox" name="potvrdjeno" id="field_potvrdjeno"
+                          ng-model="vm.rezervacija.potvrdjeno"/>
+        </div>
+
+        <div class="form-group">
+            <label for="field_stol">Stol</label>
+            <select class="form-control" id="field_stol" name="stol" ng-model="vm.rezervacija.stol" ng-options="stol as stol.id for stol in vm.stols track by stol.id">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="field_porudzbina">Porudzbina</label>
+            <select class="form-control" id="field_porudzbina" name="porudzbina" ng-model="vm.rezervacija.porudzbina" ng-options="porudzbina as porudzbina.id for porudzbina in vm.porudzbinas | orderBy:'id' track by porudzbina.id">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="field_restoran">Restoran</label>
+            <select class="form-control" id="field_restoran" name="restoran" ng-model="vm.rezervacija.restoran" ng-options="restoran as restoran.id for restoran in vm.restorans track by restoran.id">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="field_rezervisao">Rezervisao</label>
+            <select class="form-control" id="field_rezervisao" name="rezervisao" ng-model="vm.rezervacija.rezervisao" ng-options="gost as gost.id for gost in vm.gosts track by gost.id">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span>Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span>Save</span>
+        </button>
+    </div>
+</form>

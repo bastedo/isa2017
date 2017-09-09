@@ -1,0 +1,43 @@
+
+<div>
+    <h2><span>Restoran</span> {{vm.restoran.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span>Naziv</span></dt>
+        <dd>
+            <span>{{vm.restoran.naziv}}</span>
+        </dd>
+        <dt><span>Vrsta</span></dt>
+        <dd>
+            <span>{{vm.restoran.vrsta}}</span>
+        </dd>
+        <dt><span>Ocena Restorana</span></dt>
+        <dd>
+            <span>{{vm.restoran.ocenaRestorana}}</span>
+        </dd>
+        <dt><span>Konfiguracija Stolova</span></dt>
+        <dd>
+            <a ui-sref="konfiguracija-stolova-detail({id:vm.restoran.konfiguracijaStolova.id})">{{vm.restoran.konfiguracijaStolova.id}}</a>
+        </dd>
+        <dt><span>Jeovnik</span></dt>
+        <dd>
+            <a ui-sref="jelovnik-detail({id:vm.restoran.jeovnik.id})">{{vm.restoran.jeovnik.id}}</a>
+        </dd>
+        <dt><span>Karta Pica</span></dt>
+        <dd>
+            <a ui-sref="karta-pica-detail({id:vm.restoran.kartaPica.id})">{{vm.restoran.kartaPica.id}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+
+    <button type="button" ui-sref="restoran-detail.edit({id:vm.restoran.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down"> Edit</span>
+    </button>
+</div>

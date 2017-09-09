@@ -1,0 +1,35 @@
+
+<div>
+    <h2><span>Stol</span> {{vm.stol.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span>Xpozicija Stola</span></dt>
+        <dd>
+            <span>{{vm.stol.xpozicijaStola}}</span>
+        </dd>
+        <dt><span>Ypozicija Stola</span></dt>
+        <dd>
+            <span>{{vm.stol.ypozicijaStola}}</span>
+        </dd>
+        <dt><span>Pripada Segmentu</span></dt>
+        <dd>
+            <span>{{vm.stol.pripadaSegmentu}}</span>
+        </dd>
+        <dt><span>Konfiguracija Stolova</span></dt>
+        <dd>
+            <a ui-sref="konfiguracija-stolova-detail({id:vm.stol.konfiguracijaStolova.id})">{{vm.stol.konfiguracijaStolova.id}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+
+    <button type="button" ui-sref="stol-detail.edit({id:vm.stol.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down"> Edit</span>
+    </button>
+</div>

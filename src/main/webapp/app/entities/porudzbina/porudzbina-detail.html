@@ -1,0 +1,43 @@
+
+<div>
+    <h2><span>Porudzbina</span> {{vm.porudzbina.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span>Prihvaceno Pice</span></dt>
+        <dd>
+            <span>{{vm.porudzbina.prihvacenoPice}}</span>
+        </dd>
+        <dt><span>Spremno Pice</span></dt>
+        <dd>
+            <span>{{vm.porudzbina.spremnoPice}}</span>
+        </dd>
+        <dt><span>Prihvacena Hrana</span></dt>
+        <dd>
+            <span>{{vm.porudzbina.prihvacenaHrana}}</span>
+        </dd>
+        <dt><span>Spremna Hrana</span></dt>
+        <dd>
+            <span>{{vm.porudzbina.spremnaHrana}}</span>
+        </dd>
+        <dt><span>Jelo</span></dt>
+        <dd>
+            <a ui-sref="jelo-detail({id:vm.porudzbina.jelo.id})">{{vm.porudzbina.jelo.id}}</a>
+        </dd>
+        <dt><span>Pice</span></dt>
+        <dd>
+            <a ui-sref="pice-detail({id:vm.porudzbina.pice.id})">{{vm.porudzbina.pice.id}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+
+    <button type="button" ui-sref="porudzbina-detail.edit({id:vm.porudzbina.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down"> Edit</span>
+    </button>
+</div>

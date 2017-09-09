@@ -1,0 +1,43 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "konfiguracijaStolova",
+            "otherEntityName": "konfiguracijaStolova",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "zaStolove",
+            "otherEntityName": "racun",
+            "otherEntityRelationshipName": "stol"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "stol",
+            "otherEntityName": "rezervacija",
+            "otherEntityRelationshipName": "stol"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "xpozicijaStola",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "ypozicijaStola",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "pripadaSegmentu",
+            "fieldType": "Segmenat",
+            "fieldValues": "ZA_PUSACE,OTVORENA_BASTA,ZATVORENA_BASTA,ZA_NEPUSACE"
+        }
+    ],
+    "changelogDate": "20170909205351",
+    "entityTableName": "stol",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

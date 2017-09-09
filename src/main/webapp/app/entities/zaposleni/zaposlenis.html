@@ -1,0 +1,82 @@
+<div>
+    <h2>Zaposlenis</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="zaposleni.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span >
+                        Create new Zaposleni
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span>ID</span></th>
+                    <th><span>Ime</span></th>
+                    <th><span>Vrsta Zaposlenja</span></th>
+                    <th><span>Zaduzenje Za Segment</span></th>
+                    <th><span>Prezime</span></th>
+                    <th><span>Email</span></th>
+                    <th><span>Lozinka</span></th>
+                    <th><span>Datum Rodjenja</span></th>
+                    <th><span>Konfekciski Broj</span></th>
+                    <th><span>Velicina Obuce</span></th>
+                    <th><span>First Login</span></th>
+                    <th><span>Konfiguracija Stolova</span></th>
+                    <th><span>Radi U Restoranu</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="zaposleni in vm.zaposlenis track by zaposleni.id">
+                    <td><a ui-sref="zaposleni-detail({id:zaposleni.id})">{{zaposleni.id}}</a></td>
+                    <td>{{zaposleni.ime}}</td>
+                    <td>{{zaposleni.vrstaZaposlenja}}</td>
+                    <td>{{zaposleni.zaduzenjeZaSegment}}</td>
+                    <td>{{zaposleni.prezime}}</td>
+                    <td>{{zaposleni.email}}</td>
+                    <td>{{zaposleni.lozinka}}</td>
+                        <td>{{zaposleni.datumRodjenja | date:'mediumDate'}}</td>
+                    <td>{{zaposleni.konfekciskiBroj}}</td>
+                    <td>{{zaposleni.velicinaObuce}}</td>
+                    <td>{{zaposleni.firstLogin}}</td>
+                    <td>
+                        <a ui-sref="konfiguracija-stolova-detail({id:zaposleni.konfiguracijaStolova.id})">{{zaposleni.konfiguracijaStolova.id}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="restoran-detail({id:zaposleni.radiURestoranu.id})">{{zaposleni.radiURestoranu.id}}</a>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="zaposleni-detail({id:zaposleni.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="zaposleni.edit({id:zaposleni.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="zaposleni.delete({id:zaposleni.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

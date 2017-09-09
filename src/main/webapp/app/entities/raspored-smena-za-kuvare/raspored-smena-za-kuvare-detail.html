@@ -1,0 +1,39 @@
+
+<div>
+    <h2><span>Raspored Smena Za Kuvare</span> {{vm.rasporedSmenaZaKuvare.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span>Vrsta Smene</span></dt>
+        <dd>
+            <span>{{vm.rasporedSmenaZaKuvare.vrstaSmene}}</span>
+        </dd>
+        <dt><span>Start</span></dt>
+        <dd>
+            <span>{{vm.rasporedSmenaZaKuvare.start | date:'medium'}}</span>
+        </dd>
+        <dt><span>End</span></dt>
+        <dd>
+            <span>{{vm.rasporedSmenaZaKuvare.end | date:'medium'}}</span>
+        </dd>
+        <dt><span>Zaposleni</span></dt>
+        <dd>
+            <a ui-sref="zaposleni-detail({id:vm.rasporedSmenaZaKuvare.zaposleni.id})">{{vm.rasporedSmenaZaKuvare.zaposleni.id}}</a>
+        </dd>
+        <dt><span>Restoran</span></dt>
+        <dd>
+            <a ui-sref="restoran-detail({id:vm.rasporedSmenaZaKuvare.restoran.id})">{{vm.rasporedSmenaZaKuvare.restoran.id}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+
+    <button type="button" ui-sref="raspored-smena-za-kuvare-detail.edit({id:vm.rasporedSmenaZaKuvare.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down"> Edit</span>
+    </button>
+</div>

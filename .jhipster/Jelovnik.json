@@ -1,0 +1,22 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "jelo",
+            "otherEntityName": "jelo",
+            "otherEntityRelationshipName": "jelovnik"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "imeJelovnika",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170909205345",
+    "entityTableName": "jelovnik",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

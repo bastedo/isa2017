@@ -1,0 +1,70 @@
+<div>
+    <h2>Porudzbinas</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="porudzbina.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span >
+                        Create new Porudzbina
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span>ID</span></th>
+                    <th><span>Prihvaceno Pice</span></th>
+                    <th><span>Spremno Pice</span></th>
+                    <th><span>Prihvacena Hrana</span></th>
+                    <th><span>Spremna Hrana</span></th>
+                    <th><span>Jelo</span></th>
+                    <th><span>Pice</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="porudzbina in vm.porudzbinas track by porudzbina.id">
+                    <td><a ui-sref="porudzbina-detail({id:porudzbina.id})">{{porudzbina.id}}</a></td>
+                    <td>{{porudzbina.prihvacenoPice}}</td>
+                    <td>{{porudzbina.spremnoPice}}</td>
+                    <td>{{porudzbina.prihvacenaHrana}}</td>
+                    <td>{{porudzbina.spremnaHrana}}</td>
+                    <td>
+                        <a ui-sref="jelo-detail({id:porudzbina.jelo.id})">{{porudzbina.jelo.id}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="pice-detail({id:porudzbina.pice.id})">{{porudzbina.pice.id}}</a>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="porudzbina-detail({id:porudzbina.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="porudzbina.edit({id:porudzbina.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="porudzbina.delete({id:porudzbina.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

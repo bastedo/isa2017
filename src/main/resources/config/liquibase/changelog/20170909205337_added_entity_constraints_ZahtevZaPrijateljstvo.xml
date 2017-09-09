@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity ZahtevZaPrijateljstvo.
+    -->
+    <changeSet id="20170909205337-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="gost_id"
+                                 baseTableName="zahtev_za_prijateljstvo"
+                                 constraintName="fk_zahtev_za_prijateljstvo_gost_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="gost"/>
+
+    </changeSet>
+</databaseChangeLog>

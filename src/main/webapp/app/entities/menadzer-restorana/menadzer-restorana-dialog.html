@@ -1,0 +1,56 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myMenadzerRestoranaLabel">Create or edit a Menadzer Restorana</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.menadzerRestorana.id">
+            <label for="id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.menadzerRestorana.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_ime">Ime</label>
+            <input type="text" class="form-control" name="ime" id="field_ime"
+                    ng-model="vm.menadzerRestorana.ime"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_prezime">Prezime</label>
+            <input type="text" class="form-control" name="prezime" id="field_prezime"
+                    ng-model="vm.menadzerRestorana.prezime"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_email">Email</label>
+            <input type="text" class="form-control" name="email" id="field_email"
+                    ng-model="vm.menadzerRestorana.email"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_lozinka">Lozinka</label>
+            <input type="text" class="form-control" name="lozinka" id="field_lozinka"
+                    ng-model="vm.menadzerRestorana.lozinka"
+                    />
+        </div>
+
+        <div class="form-group">
+            <label for="field_menadzerZaRestoran">Menadzer Za Restoran</label>
+            <select class="form-control" id="field_menadzerZaRestoran" name="menadzerZaRestoran" ng-model="vm.menadzerRestorana.menadzerZaRestoran" ng-options="restoran as restoran.id for restoran in vm.restorans track by restoran.id">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span>Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span>Save</span>
+        </button>
+    </div>
+</form>

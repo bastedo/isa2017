@@ -1,0 +1,58 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myPorudzbinaLabel">Create or edit a Porudzbina</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.porudzbina.id">
+            <label for="id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.porudzbina.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_prihvacenoPice">Prihvaceno Pice</label>
+                <input type="checkbox" name="prihvacenoPice" id="field_prihvacenoPice"
+                          ng-model="vm.porudzbina.prihvacenoPice"/>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_spremnoPice">Spremno Pice</label>
+                <input type="checkbox" name="spremnoPice" id="field_spremnoPice"
+                          ng-model="vm.porudzbina.spremnoPice"/>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_prihvacenaHrana">Prihvacena Hrana</label>
+                <input type="checkbox" name="prihvacenaHrana" id="field_prihvacenaHrana"
+                          ng-model="vm.porudzbina.prihvacenaHrana"/>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_spremnaHrana">Spremna Hrana</label>
+                <input type="checkbox" name="spremnaHrana" id="field_spremnaHrana"
+                          ng-model="vm.porudzbina.spremnaHrana"/>
+        </div>
+
+        <div class="form-group">
+            <label for="field_jelo">Jelo</label>
+            <select class="form-control" id="field_jelo" name="jelo" ng-model="vm.porudzbina.jelo" ng-options="jelo as jelo.id for jelo in vm.jelos track by jelo.id">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="field_pice">Pice</label>
+            <select class="form-control" id="field_pice" name="pice" ng-model="vm.porudzbina.pice" ng-options="pice as pice.id for pice in vm.pices track by pice.id">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span>Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span>Save</span>
+        </button>
+    </div>
+</form>

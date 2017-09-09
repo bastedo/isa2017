@@ -1,0 +1,40 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "konfiguracija",
+            "otherEntityName": "konfiguracijaStolova",
+            "otherEntityRelationshipName": "menadzerRestorana"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "menadzerZaRestoran",
+            "otherEntityName": "restoran",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "ime",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "prezime",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "email",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "lozinka",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170909205338",
+    "entityTableName": "menadzer_restorana",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

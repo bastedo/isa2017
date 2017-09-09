@@ -1,0 +1,68 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myZahtevZaPrijateljstvoLabel">Create or edit a Zahtev Za Prijateljstvo</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.zahtevZaPrijateljstvo.id">
+            <label for="id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.zahtevZaPrijateljstvo.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_idPodnosiocaZahteva">Id Podnosioca Zahteva</label>
+            <input type="number" class="form-control" name="idPodnosiocaZahteva" id="field_idPodnosiocaZahteva"
+                    ng-model="vm.zahtevZaPrijateljstvo.idPodnosiocaZahteva"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_postalanZahtev">Postalan Zahtev</label>
+                <div class="input-group">
+                    <input id="field_postalanZahtev" type="text" class="form-control" name="postalanZahtev" uib-datepicker-popup="{{dateformat}}" ng-model="vm.zahtevZaPrijateljstvo.postalanZahtev" is-open="vm.datePickerOpenStatus.postalanZahtev"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('postalanZahtev')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_prihvacenZahtev">Prihvacen Zahtev</label>
+                <div class="input-group">
+                    <input id="field_prihvacenZahtev" type="text" class="form-control" name="prihvacenZahtev" uib-datepicker-popup="{{dateformat}}" ng-model="vm.zahtevZaPrijateljstvo.prihvacenZahtev" is-open="vm.datePickerOpenStatus.prihvacenZahtev"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('prihvacenZahtev')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_prihvacen">Prihvacen</label>
+                <input type="checkbox" name="prihvacen" id="field_prihvacen"
+                          ng-model="vm.zahtevZaPrijateljstvo.prihvacen"/>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_odbijen">Odbijen</label>
+                <input type="checkbox" name="odbijen" id="field_odbijen"
+                          ng-model="vm.zahtevZaPrijateljstvo.odbijen"/>
+        </div>
+
+        <div class="form-group">
+            <label for="field_gost">Gost</label>
+            <select class="form-control" id="field_gost" name="gost" ng-model="vm.zahtevZaPrijateljstvo.gost" ng-options="gost as gost.id for gost in vm.gosts track by gost.id">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span>Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span>Save</span>
+        </button>
+    </div>
+</form>

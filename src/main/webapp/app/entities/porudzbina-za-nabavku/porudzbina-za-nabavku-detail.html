@@ -1,0 +1,39 @@
+
+<div>
+    <h2><span>Porudzbina ZA Nabavku</span> {{vm.porudzbinaZANabavku.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span>Porudzbina</span></dt>
+        <dd>
+            <span>{{vm.porudzbinaZANabavku.porudzbina}}</span>
+        </dd>
+        <dt><span>Prihvacena</span></dt>
+        <dd>
+            <span>{{vm.porudzbinaZANabavku.prihvacena}}</span>
+        </dd>
+        <dt><span>Vrednost</span></dt>
+        <dd>
+            <span>{{vm.porudzbinaZANabavku.vrednost}}</span>
+        </dd>
+        <dt><span>Dostava</span></dt>
+        <dd>
+            <span>{{vm.porudzbinaZANabavku.dostava | date:'medium'}}</span>
+        </dd>
+        <dt><span>Poziv Za Prikupljanje N</span></dt>
+        <dd>
+            <a ui-sref="poziv-za-prikupljanje-n-detail({id:vm.porudzbinaZANabavku.pozivZaPrikupljanjeN.id})">{{vm.porudzbinaZANabavku.pozivZaPrikupljanjeN.id}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+
+    <button type="button" ui-sref="porudzbina-za-nabavku-detail.edit({id:vm.porudzbinaZANabavku.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down"> Edit</span>
+    </button>
+</div>

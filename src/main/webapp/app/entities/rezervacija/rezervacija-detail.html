@@ -1,0 +1,51 @@
+
+<div>
+    <h2><span>Rezervacija</span> {{vm.rezervacija.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span>Start Date</span></dt>
+        <dd>
+            <span>{{vm.rezervacija.startDate | date:'medium'}}</span>
+        </dd>
+        <dt><span>End Date</span></dt>
+        <dd>
+            <span>{{vm.rezervacija.endDate | date:'medium'}}</span>
+        </dd>
+        <dt><span>Ocenjeno</span></dt>
+        <dd>
+            <span>{{vm.rezervacija.ocenjeno}}</span>
+        </dd>
+        <dt><span>Potvrdjeno</span></dt>
+        <dd>
+            <span>{{vm.rezervacija.potvrdjeno}}</span>
+        </dd>
+        <dt><span>Stol</span></dt>
+        <dd>
+            <a ui-sref="stol-detail({id:vm.rezervacija.stol.id})">{{vm.rezervacija.stol.id}}</a>
+        </dd>
+        <dt><span>Porudzbina</span></dt>
+        <dd>
+            <a ui-sref="porudzbina-detail({id:vm.rezervacija.porudzbina.id})">{{vm.rezervacija.porudzbina.id}}</a>
+        </dd>
+        <dt><span>Restoran</span></dt>
+        <dd>
+            <a ui-sref="restoran-detail({id:vm.rezervacija.restoran.id})">{{vm.rezervacija.restoran.id}}</a>
+        </dd>
+        <dt><span>Rezervisao</span></dt>
+        <dd>
+            <a ui-sref="gost-detail({id:vm.rezervacija.rezervisao.id})">{{vm.rezervacija.rezervisao.id}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+
+    <button type="button" ui-sref="rezervacija-detail.edit({id:vm.rezervacija.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down"> Edit</span>
+    </button>
+</div>

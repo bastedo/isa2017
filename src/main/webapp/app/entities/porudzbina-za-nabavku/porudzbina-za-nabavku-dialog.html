@@ -1,0 +1,58 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myPorudzbinaZANabavkuLabel">Create or edit a Porudzbina ZA Nabavku</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.porudzbinaZANabavku.id">
+            <label for="id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.porudzbinaZANabavku.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_porudzbina">Porudzbina</label>
+                <textarea class="form-control" name="porudzbina" id="field_porudzbina"
+                    ng-model="vm.porudzbinaZANabavku.porudzbina" ></textarea>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_prihvacena">Prihvacena</label>
+                <input type="checkbox" name="prihvacena" id="field_prihvacena"
+                          ng-model="vm.porudzbinaZANabavku.prihvacena"/>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_vrednost">Vrednost</label>
+            <input type="number" class="form-control" name="vrednost" id="field_vrednost"
+                    ng-model="vm.porudzbinaZANabavku.vrednost"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_dostava">Dostava</label>
+                <div class="input-group">
+                    <input id="field_dostava" type="text" class="form-control" name="dostava" datetime-picker="{{dateformat}}" ng-model="vm.porudzbinaZANabavku.dostava" is-open="vm.datePickerOpenStatus.dostava"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('dostava')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+
+        <div class="form-group">
+            <label for="field_pozivZaPrikupljanjeN">Poziv Za Prikupljanje N</label>
+            <select class="form-control" id="field_pozivZaPrikupljanjeN" name="pozivZaPrikupljanjeN" ng-model="vm.porudzbinaZANabavku.pozivZaPrikupljanjeN" ng-options="pozivZaPrikupljanjeN as pozivZaPrikupljanjeN.id for pozivZaPrikupljanjeN in vm.pozivzaprikupljanjens track by pozivZaPrikupljanjeN.id">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span>Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span>Save</span>
+        </button>
+    </div>
+</form>

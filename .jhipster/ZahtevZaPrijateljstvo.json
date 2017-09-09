@@ -1,0 +1,38 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "gost",
+            "otherEntityName": "gost",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "idPodnosiocaZahteva",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "postalanZahtev",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "prihvacenZahtev",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "prihvacen",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "odbijen",
+            "fieldType": "Boolean"
+        }
+    ],
+    "changelogDate": "20170909205337",
+    "entityTableName": "zahtev_za_prijateljstvo",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

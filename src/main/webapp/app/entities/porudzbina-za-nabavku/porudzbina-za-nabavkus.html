@@ -1,0 +1,66 @@
+<div>
+    <h2>Porudzbina ZA Nabavkus</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="porudzbina-za-nabavku.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span >
+                        Create new Porudzbina ZA Nabavku
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span>ID</span></th>
+                    <th><span>Porudzbina</span></th>
+                    <th><span>Prihvacena</span></th>
+                    <th><span>Vrednost</span></th>
+                    <th><span>Dostava</span></th>
+                    <th><span>Poziv Za Prikupljanje N</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="porudzbinaZANabavku in vm.porudzbinaZANabavkus track by porudzbinaZANabavku.id">
+                    <td><a ui-sref="porudzbina-za-nabavku-detail({id:porudzbinaZANabavku.id})">{{porudzbinaZANabavku.id}}</a></td>
+                    <td>{{porudzbinaZANabavku.porudzbina}}</td>
+                    <td>{{porudzbinaZANabavku.prihvacena}}</td>
+                    <td>{{porudzbinaZANabavku.vrednost}}</td>
+                    <td>{{porudzbinaZANabavku.dostava | date:'medium'}}</td>
+                    <td>
+                        <a ui-sref="poziv-za-prikupljanje-n-detail({id:porudzbinaZANabavku.pozivZaPrikupljanjeN.id})">{{porudzbinaZANabavku.pozivZaPrikupljanjeN.id}}</a>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="porudzbina-za-nabavku-detail({id:porudzbinaZANabavku.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="porudzbina-za-nabavku.edit({id:porudzbinaZANabavku.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="porudzbina-za-nabavku.delete({id:porudzbinaZANabavku.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

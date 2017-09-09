@@ -1,0 +1,28 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "menadzerRestorana",
+            "otherEntityName": "menadzerRestorana",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "stol",
+            "otherEntityName": "stol",
+            "otherEntityRelationshipName": "konfiguracijaStolova"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "ime",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170909205350",
+    "entityTableName": "konfiguracija_stolova",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

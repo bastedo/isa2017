@@ -1,0 +1,66 @@
+<div>
+    <h2>Menadzer Restoranas</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="menadzer-restorana.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span >
+                        Create new Menadzer Restorana
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span>ID</span></th>
+                    <th><span>Ime</span></th>
+                    <th><span>Prezime</span></th>
+                    <th><span>Email</span></th>
+                    <th><span>Lozinka</span></th>
+                    <th><span>Menadzer Za Restoran</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="menadzerRestorana in vm.menadzerRestoranas track by menadzerRestorana.id">
+                    <td><a ui-sref="menadzer-restorana-detail({id:menadzerRestorana.id})">{{menadzerRestorana.id}}</a></td>
+                    <td>{{menadzerRestorana.ime}}</td>
+                    <td>{{menadzerRestorana.prezime}}</td>
+                    <td>{{menadzerRestorana.email}}</td>
+                    <td>{{menadzerRestorana.lozinka}}</td>
+                    <td>
+                        <a ui-sref="restoran-detail({id:menadzerRestorana.menadzerZaRestoran.id})">{{menadzerRestorana.menadzerZaRestoran.id}}</a>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="menadzer-restorana-detail({id:menadzerRestorana.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="menadzer-restorana.edit({id:menadzerRestorana.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="menadzer-restorana.delete({id:menadzerRestorana.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

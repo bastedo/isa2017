@@ -1,0 +1,37 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "kartaPica",
+            "otherEntityName": "kartaPica",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "pice",
+            "otherEntityName": "porudzbina",
+            "otherEntityRelationshipName": "pice"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "imeJela",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "kratkiTekst",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "text"
+        },
+        {
+            "fieldName": "cena",
+            "fieldType": "Double"
+        }
+    ],
+    "changelogDate": "20170909205349",
+    "entityTableName": "pice",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

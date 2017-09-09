@@ -1,0 +1,32 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "naplatio",
+            "otherEntityName": "zaposleni",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipName": "stol",
+            "otherEntityName": "stol",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "cena",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "datum",
+            "fieldType": "ZonedDateTime"
+        }
+    ],
+    "changelogDate": "20170909205348",
+    "entityTableName": "racun",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

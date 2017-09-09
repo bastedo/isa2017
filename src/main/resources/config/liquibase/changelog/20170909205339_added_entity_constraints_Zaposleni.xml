@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity Zaposleni.
+    -->
+    <changeSet id="20170909205339-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="konfiguracija_stolova_id"
+                                 baseTableName="zaposleni"
+                                 constraintName="fk_zaposleni_konfiguracija_stolova_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="konfiguracija_stolova"/>
+
+        <addForeignKeyConstraint baseColumnNames="radiurestoranu_id"
+                                 baseTableName="zaposleni"
+                                 constraintName="fk_zaposleni_radiurestoranu_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="restoran"/>
+
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,22 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "pice",
+            "otherEntityName": "pice",
+            "otherEntityRelationshipName": "kartaPica"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "imeKartePica",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170909205347",
+    "entityTableName": "karta_pica",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

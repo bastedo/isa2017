@@ -1,0 +1,68 @@
+<div>
+    <h2>Raspored Smena Za Sankeres</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="raspored-smena-za-sankere.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span >
+                        Create new Raspored Smena Za Sankere
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span>ID</span></th>
+                    <th><span>Vrsta Smene</span></th>
+                    <th><span>Start</span></th>
+                    <th><span>End</span></th>
+                    <th><span>Zaposleni</span></th>
+                    <th><span>Restoran</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="rasporedSmenaZaSankere in vm.rasporedSmenaZaSankeres track by rasporedSmenaZaSankere.id">
+                    <td><a ui-sref="raspored-smena-za-sankere-detail({id:rasporedSmenaZaSankere.id})">{{rasporedSmenaZaSankere.id}}</a></td>
+                    <td>{{rasporedSmenaZaSankere.vrstaSmene}}</td>
+                    <td>{{rasporedSmenaZaSankere.start | date:'medium'}}</td>
+                    <td>{{rasporedSmenaZaSankere.end | date:'medium'}}</td>
+                    <td>
+                        <a ui-sref="zaposleni-detail({id:rasporedSmenaZaSankere.zaposleni.id})">{{rasporedSmenaZaSankere.zaposleni.id}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="restoran-detail({id:rasporedSmenaZaSankere.restoran.id})">{{rasporedSmenaZaSankere.restoran.id}}</a>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="raspored-smena-za-sankere-detail({id:rasporedSmenaZaSankere.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="raspored-smena-za-sankere.edit({id:rasporedSmenaZaSankere.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="raspored-smena-za-sankere.delete({id:rasporedSmenaZaSankere.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

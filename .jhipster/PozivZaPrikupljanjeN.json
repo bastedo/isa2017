@@ -1,0 +1,37 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "restoran",
+            "otherEntityName": "restoran",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "porudzbinaZaNabavku",
+            "otherEntityName": "porudzbinaZANabavku",
+            "otherEntityRelationshipName": "pozivZaPrikupljanjeN"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "spisakPotreba",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "text"
+        },
+        {
+            "fieldName": "startDate",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "endDate",
+            "fieldType": "ZonedDateTime"
+        }
+    ],
+    "changelogDate": "20170909205352",
+    "entityTableName": "poziv_za_prikupljanje_n",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

@@ -1,0 +1,35 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "pozivZaPrikupljanjeN",
+            "otherEntityName": "pozivZaPrikupljanjeN",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "porudzbina",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "text"
+        },
+        {
+            "fieldName": "prihvacena",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "vrednost",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "dostava",
+            "fieldType": "ZonedDateTime"
+        }
+    ],
+    "changelogDate": "20170909205353",
+    "entityTableName": "porudzbina_za_nabavku",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

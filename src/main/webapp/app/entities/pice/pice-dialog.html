@@ -1,0 +1,49 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myPiceLabel">Create or edit a Pice</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.pice.id">
+            <label for="id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.pice.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_imeJela">Ime Jela</label>
+            <input type="text" class="form-control" name="imeJela" id="field_imeJela"
+                    ng-model="vm.pice.imeJela"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_kratkiTekst">Kratki Tekst</label>
+                <textarea class="form-control" name="kratkiTekst" id="field_kratkiTekst"
+                    ng-model="vm.pice.kratkiTekst" ></textarea>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_cena">Cena</label>
+            <input type="number" class="form-control" name="cena" id="field_cena"
+                    ng-model="vm.pice.cena"
+                    />
+        </div>
+
+        <div class="form-group">
+            <label for="field_kartaPica">Karta Pica</label>
+            <select class="form-control" id="field_kartaPica" name="kartaPica" ng-model="vm.pice.kartaPica" ng-options="kartaPica as kartaPica.id for kartaPica in vm.kartapicas track by kartaPica.id">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span>Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span>Save</span>
+        </button>
+    </div>
+</form>

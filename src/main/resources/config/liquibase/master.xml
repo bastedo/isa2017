@@ -5,6 +5,43 @@
     xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
 
     <include file="config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20170909205336_added_entity_Gost.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20170909205337_added_entity_ZahtevZaPrijateljstvo.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20170909205338_added_entity_MenadzerRestorana.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20170909205339_added_entity_Zaposleni.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20170909205340_added_entity_RasporedSmenaZaSankere.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20170909205341_added_entity_RasporedSmenaZaKuvare.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20170909205342_added_entity_RasporedSmenaZaKonobare.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20170909205343_added_entity_Ocena.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20170909205344_added_entity_Restoran.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20170909205345_added_entity_Jelovnik.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20170909205346_added_entity_Jelo.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20170909205347_added_entity_KartaPica.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20170909205348_added_entity_Racun.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20170909205349_added_entity_Pice.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20170909205350_added_entity_KonfiguracijaStolova.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20170909205351_added_entity_Stol.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20170909205352_added_entity_PozivZaPrikupljanjeN.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20170909205353_added_entity_PorudzbinaZANabavku.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20170909205354_added_entity_Porudzbina.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20170909205355_added_entity_Rezervacija.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
+    <include file="config/liquibase/changelog/20170909205337_added_entity_constraints_ZahtevZaPrijateljstvo.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20170909205338_added_entity_constraints_MenadzerRestorana.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20170909205339_added_entity_constraints_Zaposleni.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20170909205340_added_entity_constraints_RasporedSmenaZaSankere.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20170909205341_added_entity_constraints_RasporedSmenaZaKuvare.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20170909205342_added_entity_constraints_RasporedSmenaZaKonobare.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20170909205343_added_entity_constraints_Ocena.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20170909205344_added_entity_constraints_Restoran.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20170909205346_added_entity_constraints_Jelo.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20170909205348_added_entity_constraints_Racun.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20170909205349_added_entity_constraints_Pice.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20170909205350_added_entity_constraints_KonfiguracijaStolova.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20170909205351_added_entity_constraints_Stol.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20170909205352_added_entity_constraints_PozivZaPrikupljanjeN.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20170909205353_added_entity_constraints_PorudzbinaZANabavku.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20170909205354_added_entity_constraints_Porudzbina.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20170909205355_added_entity_constraints_Rezervacija.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
 </databaseChangeLog>

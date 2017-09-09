@@ -1,0 +1,35 @@
+
+<div>
+    <h2><span>Pice</span> {{vm.pice.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span>Ime Jela</span></dt>
+        <dd>
+            <span>{{vm.pice.imeJela}}</span>
+        </dd>
+        <dt><span>Kratki Tekst</span></dt>
+        <dd>
+            <span>{{vm.pice.kratkiTekst}}</span>
+        </dd>
+        <dt><span>Cena</span></dt>
+        <dd>
+            <span>{{vm.pice.cena}}</span>
+        </dd>
+        <dt><span>Karta Pica</span></dt>
+        <dd>
+            <a ui-sref="karta-pica-detail({id:vm.pice.kartaPica.id})">{{vm.pice.kartaPica.id}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+
+    <button type="button" ui-sref="pice-detail.edit({id:vm.pice.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down"> Edit</span>
+    </button>
+</div>

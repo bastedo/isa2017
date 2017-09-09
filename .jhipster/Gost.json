@@ -1,0 +1,40 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "rezervacije",
+            "otherEntityName": "rezervacija",
+            "otherEntityRelationshipName": "rezervisao"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "poslaoZahtev",
+            "otherEntityName": "zahtevZaPrijateljstvo",
+            "otherEntityRelationshipName": "gost"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "ime",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "prezime",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "email",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "lozinka",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170909205336",
+    "entityTableName": "gost",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

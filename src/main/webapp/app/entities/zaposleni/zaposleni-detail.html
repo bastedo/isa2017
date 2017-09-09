@@ -1,0 +1,67 @@
+
+<div>
+    <h2><span>Zaposleni</span> {{vm.zaposleni.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span>Ime</span></dt>
+        <dd>
+            <span>{{vm.zaposleni.ime}}</span>
+        </dd>
+        <dt><span>Vrsta Zaposlenja</span></dt>
+        <dd>
+            <span>{{vm.zaposleni.vrstaZaposlenja}}</span>
+        </dd>
+        <dt><span>Zaduzenje Za Segment</span></dt>
+        <dd>
+            <span>{{vm.zaposleni.zaduzenjeZaSegment}}</span>
+        </dd>
+        <dt><span>Prezime</span></dt>
+        <dd>
+            <span>{{vm.zaposleni.prezime}}</span>
+        </dd>
+        <dt><span>Email</span></dt>
+        <dd>
+            <span>{{vm.zaposleni.email}}</span>
+        </dd>
+        <dt><span>Lozinka</span></dt>
+        <dd>
+            <span>{{vm.zaposleni.lozinka}}</span>
+        </dd>
+        <dt><span>Datum Rodjenja</span></dt>
+        <dd>
+            <span>{{vm.zaposleni.datumRodjenja | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span>Konfekciski Broj</span></dt>
+        <dd>
+            <span>{{vm.zaposleni.konfekciskiBroj}}</span>
+        </dd>
+        <dt><span>Velicina Obuce</span></dt>
+        <dd>
+            <span>{{vm.zaposleni.velicinaObuce}}</span>
+        </dd>
+        <dt><span>First Login</span></dt>
+        <dd>
+            <span>{{vm.zaposleni.firstLogin}}</span>
+        </dd>
+        <dt><span>Konfiguracija Stolova</span></dt>
+        <dd>
+            <a ui-sref="konfiguracija-stolova-detail({id:vm.zaposleni.konfiguracijaStolova.id})">{{vm.zaposleni.konfiguracijaStolova.id}}</a>
+        </dd>
+        <dt><span>Radi U Restoranu</span></dt>
+        <dd>
+            <a ui-sref="restoran-detail({id:vm.zaposleni.radiURestoranu.id})">{{vm.zaposleni.radiURestoranu.id}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+
+    <button type="button" ui-sref="zaposleni-detail.edit({id:vm.zaposleni.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down"> Edit</span>
+    </button>
+</div>

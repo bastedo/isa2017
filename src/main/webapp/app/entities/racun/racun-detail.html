@@ -1,0 +1,35 @@
+
+<div>
+    <h2><span>Racun</span> {{vm.racun.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span>Cena</span></dt>
+        <dd>
+            <span>{{vm.racun.cena}}</span>
+        </dd>
+        <dt><span>Datum</span></dt>
+        <dd>
+            <span>{{vm.racun.datum | date:'medium'}}</span>
+        </dd>
+        <dt><span>Naplatio</span></dt>
+        <dd>
+            <a ui-sref="zaposleni-detail({id:vm.racun.naplatio.id})">{{vm.racun.naplatio.id}}</a>
+        </dd>
+        <dt><span>Stol</span></dt>
+        <dd>
+            <a ui-sref="stol-detail({id:vm.racun.stol.id})">{{vm.racun.stol.id}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+
+    <button type="button" ui-sref="racun-detail.edit({id:vm.racun.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down"> Edit</span>
+    </button>
+</div>
