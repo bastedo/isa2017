@@ -1,0 +1,194 @@
+
+enum VrstaZaposlenja {
+	KONOBAR, SANKER, KUVAR
+}
+enum VrstaSmene {
+	PRVA, DRUGA, TRECA
+}
+enum Segmenat {
+    ZA_PUSACE, OTVORENA_BASTA, ZATVORENA_BASTA, ZA_NEPUSACE
+}
+
+entity Gost {
+    ime String,
+    prezime String,
+    email String,
+    lozinka String,
+	
+}
+entity ZahtevZaPrijateljstvo {
+	idPodnosiocaZahteva Integer,
+	postalanZahtev LocalDate,
+    prihvacenZahtev LocalDate,
+	prihvacen Boolean,
+    odbijen Boolean,
+}
+
+entity MenadzerRestorana {
+	ime String,
+    prezime String,
+    email String,
+    lozinka String,
+}
+
+entity Zaposleni {
+	ime String,
+    vrstaZaposlenja VrstaZaposlenja,
+    zaduzenjeZaSegment Segmenat,
+    prezime String,
+    email String,
+    lozinka String,
+    datumRodjenja LocalDate,
+    konfekciskiBroj Integer,
+    velicinaObuce Integer, 
+    firstLogin Boolean,
+
+}
+
+entity RasporedSmenaZaSankere {
+	vrstaSmene VrstaSmene,
+    start ZonedDateTime,
+    end ZonedDateTime,
+
+}
+entity RasporedSmenaZaKuvare {
+	vrstaSmene VrstaSmene,
+    start ZonedDateTime,
+    end ZonedDateTime,
+
+}
+entity RasporedSmenaZaKonobare {
+	vrstaSmene VrstaSmene,
+    start ZonedDateTime,
+    end ZonedDateTime,
+}
+
+entity Ocena {
+	ocena Double,
+}
+entity Restoran {
+	
+    naziv String,
+    vrsta String,
+    ocenaRestorana Double,
+    
+}
+
+entity Jelovnik {
+	imeJelovnika String,
+}
+
+entity Jelo {
+	
+    imeJela String,
+    kratkiTekst TextBlob,
+    cena Double,
+}
+
+entity KartaPica {
+	imeKartePica String,
+}
+entity Racun {
+	cena Double,
+    datum ZonedDateTime
+}
+
+entity Pice {
+
+    imeJela String,
+    kratkiTekst TextBlob,
+    cena Double,
+}
+
+entity KonfiguracijaStolova {
+	imeKonfiguracije String
+	
+}
+
+entity Stol {
+	x_pozicijaStola Integer,
+    y_pozicijaStola Integer,
+    pripadaSegmentu Segmenat,
+}
+
+entity PozivZaPrikupljanjeN {
+	spisakPotreba TextBlob,
+    startDate ZonedDateTime,
+    endDate ZonedDateTime,
+}
+
+entity PorudzbinaZANabavku {
+	porudzbina TextBlob,
+    prihvacena Boolean,
+    vrednost Double,
+    dostava ZonedDateTime,
+	
+}
+
+entity Porudzbina {
+	prihvacenoPice Boolean,
+    spremnoPice Boolean,
+    prihvacenaHrana Boolean,
+    spremnaHrana Boolean,
+}
+
+entity Rezervacija {
+	
+	startDate ZonedDateTime,
+    endDate ZonedDateTime,
+    ocenjeno Boolean,
+    potvrdjeno Boolean,
+    
+	
+}
+entity KonfiguracijaStolova {
+	ime String
+}
+relationship OneToOne {
+	Rezervacija {porudzbina} to Porudzbina {zaRezervaciju},
+    
+    Ocena {gost} to Gost,
+    
+    Restoran {konfiguracijaStolova} to KonfiguracijaStolova,
+    
+    Restoran {jeovnik} to Jelovnik,
+    Restoran {kartaPica} to KartaPica,
+        
+    Zaposleni {konfiguracijaStolova} to KonfiguracijaStolova
+
+
+}
+relationship OneToMany {
+  Jelovnik{jelo} to Jelo,
+  KartaPica{pice} to Pice,
+  KonfiguracijaStolova {stol} to Stol,
+  
+  PozivZaPrikupljanjeN {porudzbinaZaNabavku} to PorudzbinaZANabavku,
+  
+  Stol {zaStolove} to Racun ,
+  Stol {stol} to Rezervacija,
+  
+  MenadzerRestorana {konfiguracija} to KonfiguracijaStolova,
+  
+  Restoran {ocena} to Ocena,
+  Restoran {pozivZaPrikupljanje} to PozivZaPrikupljanjeN,
+  Restoran {rezervacija} to Rezervacija {restoran},
+  Restoran {menadzeriRestorana} to MenadzerRestorana {menadzerZaRestoran},
+  Restoran {zaposleniRestorana} to Zaposleni {radiURestoranu},
+  Restoran {rasporedSmenaZaSankere} to RasporedSmenaZaSankere,
+  Restoran {rasporedSmenaZaKonobare} to RasporedSmenaZaKonobare,
+  Restoran {rasporedSmenaZaKuvare} to RasporedSmenaZaKuvare,
+  
+  Zaposleni {rasporedSmenaZaSankere} to RasporedSmenaZaSankere{zaposleni},
+  Zaposleni {rasporedSmenaZaKonobare} to RasporedSmenaZaKonobare{zaposleni},
+  Zaposleni {rasporedSmenaZaKuvare} to RasporedSmenaZaKuvare{zaposleni},
+  Zaposleni {racuni} to Racun {naplatio},
+  
+  Gost{rezervacije} to Rezervacija {rezervisao},
+  Gost {poslaoZahtev} to ZahtevZaPrijateljstvo,
+  
+  Pice {pice} to Porudzbina,
+  Jelo {jelo} to Porudzbina 
+
+}
+
