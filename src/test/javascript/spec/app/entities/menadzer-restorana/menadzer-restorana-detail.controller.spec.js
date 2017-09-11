@@ -4,7 +4,7 @@ describe('Controller Tests', function() {
 
     describe('MenadzerRestorana Management Detail Controller', function() {
         var $scope, $rootScope;
-        var MockEntity, MockPreviousState, MockMenadzerRestorana, MockKonfiguracijaStolova, MockRestoran;
+        var MockEntity, MockPreviousState, MockMenadzerRestorana, MockUser, MockKonfiguracijaStolova, MockRestoran;
         var createController;
 
         beforeEach(inject(function($injector) {
@@ -13,6 +13,7 @@ describe('Controller Tests', function() {
             MockEntity = jasmine.createSpy('MockEntity');
             MockPreviousState = jasmine.createSpy('MockPreviousState');
             MockMenadzerRestorana = jasmine.createSpy('MockMenadzerRestorana');
+            MockUser = jasmine.createSpy('MockUser');
             MockKonfiguracijaStolova = jasmine.createSpy('MockKonfiguracijaStolova');
             MockRestoran = jasmine.createSpy('MockRestoran');
             
@@ -23,6 +24,7 @@ describe('Controller Tests', function() {
                 'entity': MockEntity,
                 'previousState': MockPreviousState,
                 'MenadzerRestorana': MockMenadzerRestorana,
+                'User': MockUser,
                 'KonfiguracijaStolova': MockKonfiguracijaStolova,
                 'Restoran': MockRestoran
             };

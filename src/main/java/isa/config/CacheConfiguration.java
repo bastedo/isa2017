@@ -86,6 +86,12 @@ public class CacheConfiguration {
             cm.createCache(isa.domain.PorudzbinaZANabavku.class.getName(), jcacheConfiguration);
             cm.createCache(isa.domain.Porudzbina.class.getName(), jcacheConfiguration);
             cm.createCache(isa.domain.Rezervacija.class.getName(), jcacheConfiguration);
+            cm.createCache(isa.domain.Gost.class.getName() + ".prijateljis", jcacheConfiguration);
+            cm.createCache(isa.domain.Ponudjac.class.getName(), jcacheConfiguration);
+            cm.createCache(isa.domain.MenadzerSistema.class.getName(), jcacheConfiguration);
+            cm.createCache(isa.domain.Gost.class.getName() + ".userId1S", jcacheConfiguration);
+            cm.createCache(isa.domain.Gost.class.getName() + ".userId2S", jcacheConfiguration);
+            cm.createCache(isa.domain.Prijatelji.class.getName(), jcacheConfiguration);
             // jhipster-needle-ehcache-add-entry
         };
     }

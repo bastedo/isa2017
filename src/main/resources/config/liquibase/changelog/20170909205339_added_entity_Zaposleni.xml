@@ -61,7 +61,9 @@
             <column name="first_login" type="bit">
                 <constraints nullable="true" />
             </column>
-            <column name="konfiguracija_stolova_id" type="bigint">
+            <column name="userid_id" type="bigint">
+                <constraints unique="true" nullable="true" />
+            </column>            <column name="konfiguracija_stolova_id" type="bigint">
                 <constraints unique="true" nullable="true" />
             </column>
             <column name="radiurestoranu_id" type="bigint">

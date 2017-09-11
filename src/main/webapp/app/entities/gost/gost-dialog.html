@@ -38,6 +38,16 @@
                     />
         </div>
 
+        <div class="form-group">
+            <label for="field_userID">User ID</label>
+            <select class="form-control" id="field_userID" name="userID" ng-model="vm.gost.userID" ng-options="user as user.id for user in vm.users track by user.id">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="field_prijatelji">Prijatelji</label>
+            <select class="form-control" id="field_prijatelji" multiple name="prijatelji" ng-model="vm.gost.prijateljis" ng-options="gost as gost.id for gost in vm.gosts track by gost.id"></select>
+        </div>
     </div>
     <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">

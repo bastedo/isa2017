@@ -37,7 +37,9 @@
             <column name="lozinka" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
-
+            <column name="userid_id" type="bigint">
+                <constraints unique="true" nullable="true" />
+            </column>
             <column name="menadzer_za_restoran_id" type="bigint">
                 <constraints nullable="true" />
             </column>

@@ -3,6 +3,14 @@
     "relationships": [
         {
             "relationshipType": "one-to-one",
+            "relationshipName": "userID",
+            "otherEntityName": "user",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "zaposleni"
+        },
+        {
+            "relationshipType": "one-to-one",
             "relationshipName": "konfiguracijaStolova",
             "otherEntityName": "konfiguracijaStolova",
             "otherEntityField": "id",

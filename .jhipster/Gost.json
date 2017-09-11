@@ -2,6 +2,14 @@
     "fluentMethods": true,
     "relationships": [
         {
+            "relationshipType": "one-to-one",
+            "relationshipName": "userID",
+            "otherEntityName": "user",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "gost"
+        },
+        {
             "relationshipType": "one-to-many",
             "relationshipName": "rezervacije",
             "otherEntityName": "rezervacija",
@@ -12,6 +20,14 @@
             "relationshipName": "poslaoZahtev",
             "otherEntityName": "zahtevZaPrijateljstvo",
             "otherEntityRelationshipName": "gost"
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityRelationshipName": "",
+            "relationshipName": "prijatelji",
+            "otherEntityName": "gost",
+            "otherEntityField": "id",
+            "ownerSide": true
         }
     ],
     "fields": [

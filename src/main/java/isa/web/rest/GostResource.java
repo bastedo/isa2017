@@ -84,7 +84,7 @@ public class GostResource {
     @Timed
     public List<Gost> getAllGosts() {
         log.debug("REST request to get all Gosts");
-        return gostRepository.findAll();
+        return gostRepository.findAllWithEagerRelationships();
         }
 
     /**
@@ -97,7 +97,7 @@ public class GostResource {
     @Timed
     public ResponseEntity<Gost> getGost(@PathVariable Long id) {
         log.debug("REST request to get Gost : {}", id);
-        Gost gost = gostRepository.findOne(id);
+        Gost gost = gostRepository.findOneWithEagerRelationships(id);
         return ResponseUtil.wrapOrNotFound(Optional.ofNullable(gost));
     }
 

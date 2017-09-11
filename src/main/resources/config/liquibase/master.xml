@@ -25,6 +25,9 @@
     <include file="config/liquibase/changelog/20170909205353_added_entity_PorudzbinaZANabavku.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20170909205354_added_entity_Porudzbina.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20170909205355_added_entity_Rezervacija.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20170910074801_added_entity_Ponudjac.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20170910074802_added_entity_MenadzerSistema.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20170910081315_added_entity_Prijatelji.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
     <include file="config/liquibase/changelog/20170909205337_added_entity_constraints_ZahtevZaPrijateljstvo.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20170909205338_added_entity_constraints_MenadzerRestorana.xml" relativeToChangelogFile="false"/>
@@ -43,5 +46,9 @@
     <include file="config/liquibase/changelog/20170909205353_added_entity_constraints_PorudzbinaZANabavku.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20170909205354_added_entity_constraints_Porudzbina.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20170909205355_added_entity_constraints_Rezervacija.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20170909205336_added_entity_constraints_Gost.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20170910074801_added_entity_constraints_Ponudjac.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20170910074802_added_entity_constraints_MenadzerSistema.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20170910081315_added_entity_constraints_Prijatelji.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
 </databaseChangeLog>

@@ -20,6 +20,10 @@
         <dd>
             <span>{{vm.menadzerRestorana.lozinka}}</span>
         </dd>
+        <dt><span>User ID</span></dt>
+        <dd>
+            {{vm.menadzerRestorana.userID.id}}
+        </dd>
         <dt><span>Menadzer Za Restoran</span></dt>
         <dd>
             <a ui-sref="restoran-detail({id:vm.menadzerRestorana.menadzerZaRestoran.id})">{{vm.menadzerRestorana.menadzerZaRestoran.id}}</a>

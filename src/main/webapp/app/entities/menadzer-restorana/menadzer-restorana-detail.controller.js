@@ -5,9 +5,9 @@
         .module('isa2017App')
         .controller('MenadzerRestoranaDetailController', MenadzerRestoranaDetailController);
 
-    MenadzerRestoranaDetailController.$inject = ['$scope', '$rootScope', '$stateParams', 'previousState', 'entity', 'MenadzerRestorana', 'KonfiguracijaStolova', 'Restoran'];
+    MenadzerRestoranaDetailController.$inject = ['$scope', '$rootScope', '$stateParams', 'previousState', 'entity', 'MenadzerRestorana', 'User', 'KonfiguracijaStolova', 'Restoran'];
 
-    function MenadzerRestoranaDetailController($scope, $rootScope, $stateParams, previousState, entity, MenadzerRestorana, KonfiguracijaStolova, Restoran) {
+    function MenadzerRestoranaDetailController($scope, $rootScope, $stateParams, previousState, entity, MenadzerRestorana, User, KonfiguracijaStolova, Restoran) {
         var vm = this;
 
         vm.menadzerRestorana = entity;

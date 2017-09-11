@@ -5,14 +5,15 @@
         .module('isa2017App')
         .controller('MenadzerRestoranaDialogController', MenadzerRestoranaDialogController);
 
-    MenadzerRestoranaDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', 'entity', 'MenadzerRestorana', 'KonfiguracijaStolova', 'Restoran'];
+    MenadzerRestoranaDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', '$q', 'entity', 'MenadzerRestorana', 'User', 'KonfiguracijaStolova', 'Restoran'];
 
-    function MenadzerRestoranaDialogController ($timeout, $scope, $stateParams, $uibModalInstance, entity, MenadzerRestorana, KonfiguracijaStolova, Restoran) {
+    function MenadzerRestoranaDialogController ($timeout, $scope, $stateParams, $uibModalInstance, $q, entity, MenadzerRestorana, User, KonfiguracijaStolova, Restoran) {
         var vm = this;
 
         vm.menadzerRestorana = entity;
         vm.clear = clear;
         vm.save = save;
+        vm.users = User.query();
         vm.konfiguracijastolova = KonfiguracijaStolova.query();
         vm.restorans = Restoran.query();
 

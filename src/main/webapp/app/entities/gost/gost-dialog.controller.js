@@ -5,16 +5,18 @@
         .module('isa2017App')
         .controller('GostDialogController', GostDialogController);
 
-    GostDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', 'entity', 'Gost', 'Rezervacija', 'ZahtevZaPrijateljstvo'];
+    GostDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', '$q', 'entity', 'Gost', 'User', 'Rezervacija', 'ZahtevZaPrijateljstvo'];
 
-    function GostDialogController ($timeout, $scope, $stateParams, $uibModalInstance, entity, Gost, Rezervacija, ZahtevZaPrijateljstvo) {
+    function GostDialogController ($timeout, $scope, $stateParams, $uibModalInstance, $q, entity, Gost, User, Rezervacija, ZahtevZaPrijateljstvo) {
         var vm = this;
 
         vm.gost = entity;
         vm.clear = clear;
         vm.save = save;
+        vm.users = User.query();
         vm.rezervacijas = Rezervacija.query();
         vm.zahtevzaprijateljstvos = ZahtevZaPrijateljstvo.query();
+        vm.gosts = Gost.query();
 
         $timeout(function (){
             angular.element('.form-group:eq(1)>input').focus();

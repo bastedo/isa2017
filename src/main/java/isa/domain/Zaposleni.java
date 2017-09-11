@@ -63,6 +63,10 @@ public class Zaposleni implements Serializable {
 
     @OneToOne
     @JoinColumn(unique = true)
+    private User userID;
+
+    @OneToOne
+    @JoinColumn(unique = true)
     private KonfiguracijaStolova konfiguracijaStolova;
 
     @OneToMany(mappedBy = "zaposleni")
@@ -225,6 +229,19 @@ public class Zaposleni implements Serializable {
 
     public void setFirstLogin(Boolean firstLogin) {
         this.firstLogin = firstLogin;
+    }
+
+    public User getUserID() {
+        return userID;
+    }
+
+    public Zaposleni userID(User user) {
+        this.userID = user;
+        return this;
+    }
+
+    public void setUserID(User user) {
+        this.userID = user;
     }
 
     public KonfiguracijaStolova getKonfiguracijaStolova() {

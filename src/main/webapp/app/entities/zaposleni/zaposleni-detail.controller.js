@@ -5,9 +5,9 @@
         .module('isa2017App')
         .controller('ZaposleniDetailController', ZaposleniDetailController);
 
-    ZaposleniDetailController.$inject = ['$scope', '$rootScope', '$stateParams', 'previousState', 'entity', 'Zaposleni', 'KonfiguracijaStolova', 'RasporedSmenaZaSankere', 'RasporedSmenaZaKonobare', 'RasporedSmenaZaKuvare', 'Racun', 'Restoran'];
+    ZaposleniDetailController.$inject = ['$scope', '$rootScope', '$stateParams', 'previousState', 'entity', 'Zaposleni', 'User', 'KonfiguracijaStolova', 'RasporedSmenaZaSankere', 'RasporedSmenaZaKonobare', 'RasporedSmenaZaKuvare', 'Racun', 'Restoran'];
 
-    function ZaposleniDetailController($scope, $rootScope, $stateParams, previousState, entity, Zaposleni, KonfiguracijaStolova, RasporedSmenaZaSankere, RasporedSmenaZaKonobare, RasporedSmenaZaKuvare, Racun, Restoran) {
+    function ZaposleniDetailController($scope, $rootScope, $stateParams, previousState, entity, Zaposleni, User, KonfiguracijaStolova, RasporedSmenaZaSankere, RasporedSmenaZaKonobare, RasporedSmenaZaKuvare, Racun, Restoran) {
         var vm = this;
 
         vm.zaposleni = entity;

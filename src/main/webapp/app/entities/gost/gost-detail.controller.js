@@ -5,9 +5,9 @@
         .module('isa2017App')
         .controller('GostDetailController', GostDetailController);
 
-    GostDetailController.$inject = ['$scope', '$rootScope', '$stateParams', 'previousState', 'entity', 'Gost', 'Rezervacija', 'ZahtevZaPrijateljstvo'];
+    GostDetailController.$inject = ['$scope', '$rootScope', '$stateParams', 'previousState', 'entity', 'Gost', 'User', 'Rezervacija', 'ZahtevZaPrijateljstvo'];
 
-    function GostDetailController($scope, $rootScope, $stateParams, previousState, entity, Gost, Rezervacija, ZahtevZaPrijateljstvo) {
+    function GostDetailController($scope, $rootScope, $stateParams, previousState, entity, Gost, User, Rezervacija, ZahtevZaPrijateljstvo) {
         var vm = this;
 
         vm.gost = entity;

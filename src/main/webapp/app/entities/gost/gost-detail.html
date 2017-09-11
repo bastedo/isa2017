@@ -20,6 +20,16 @@
         <dd>
             <span>{{vm.gost.lozinka}}</span>
         </dd>
+        <dt><span>User ID</span></dt>
+        <dd>
+            {{vm.gost.userID.id}}
+        </dd>
+        <dt><span>Prijatelji</span></dt>
+        <dd>
+            <span ng-repeat="prijatelji in vm.gost.prijateljis">
+                <a ui-sref="gost-detail({id: prijatelji.id})">{{prijatelji.id}}</a>{{$last ? '' : ', '}}
+            </span>
+        </dd>
     </dl>
 
     <button type="submit"

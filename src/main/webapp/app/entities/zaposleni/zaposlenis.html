@@ -29,6 +29,7 @@
                     <th><span>Konfekciski Broj</span></th>
                     <th><span>Velicina Obuce</span></th>
                     <th><span>First Login</span></th>
+                    <th><span>User ID</span></th>
                     <th><span>Konfiguracija Stolova</span></th>
                     <th><span>Radi U Restoranu</span></th>
                     <th></th>
@@ -47,6 +48,9 @@
                     <td>{{zaposleni.konfekciskiBroj}}</td>
                     <td>{{zaposleni.velicinaObuce}}</td>
                     <td>{{zaposleni.firstLogin}}</td>
+                    <td>
+                        {{zaposleni.userID.id}}
+                    </td>
                     <td>
                         <a ui-sref="konfiguracija-stolova-detail({id:zaposleni.konfiguracijaStolova.id})">{{zaposleni.konfiguracijaStolova.id}}</a>
                     </td>

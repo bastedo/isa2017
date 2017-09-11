@@ -1,22 +1,19 @@
 package isa.domain;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.HashSet;
-import java.util.Set;
 import java.util.Objects;
 
 /**
- * A MenadzerRestorana.
+ * A MenadzerSistema.
  */
 @Entity
-@Table(name = "menadzer_restorana")
+@Table(name = "menadzer_sistema")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-public class MenadzerRestorana implements Serializable {
+public class MenadzerSistema implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -40,14 +37,6 @@ public class MenadzerRestorana implements Serializable {
     @JoinColumn(unique = true)
     private User userID;
 
-    @OneToMany(mappedBy = "menadzerRestorana")
-    @JsonIgnore
-    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-    private Set<KonfiguracijaStolova> konfiguracijas = new HashSet<>();
-
-    @ManyToOne
-    private Restoran menadzerZaRestoran;
-
     // jhipster-needle-entity-add-field - Jhipster will add fields here, do not remove
     public Long getId() {
         return id;
@@ -61,7 +50,7 @@ public class MenadzerRestorana implements Serializable {
         return ime;
     }
 
-    public MenadzerRestorana ime(String ime) {
+    public MenadzerSistema ime(String ime) {
         this.ime = ime;
         return this;
     }
@@ -74,7 +63,7 @@ public class MenadzerRestorana implements Serializable {
         return prezime;
     }
 
-    public MenadzerRestorana prezime(String prezime) {
+    public MenadzerSistema prezime(String prezime) {
         this.prezime = prezime;
         return this;
     }
@@ -87,7 +76,7 @@ public class MenadzerRestorana implements Serializable {
         return email;
     }
 
-    public MenadzerRestorana email(String email) {
+    public MenadzerSistema email(String email) {
         this.email = email;
         return this;
     }
@@ -100,7 +89,7 @@ public class MenadzerRestorana implements Serializable {
         return lozinka;
     }
 
-    public MenadzerRestorana lozinka(String lozinka) {
+    public MenadzerSistema lozinka(String lozinka) {
         this.lozinka = lozinka;
         return this;
     }
@@ -113,51 +102,13 @@ public class MenadzerRestorana implements Serializable {
         return userID;
     }
 
-    public MenadzerRestorana userID(User user) {
+    public MenadzerSistema userID(User user) {
         this.userID = user;
         return this;
     }
 
     public void setUserID(User user) {
         this.userID = user;
-    }
-
-    public Set<KonfiguracijaStolova> getKonfiguracijas() {
-        return konfiguracijas;
-    }
-
-    public MenadzerRestorana konfiguracijas(Set<KonfiguracijaStolova> konfiguracijaStolova) {
-        this.konfiguracijas = konfiguracijaStolova;
-        return this;
-    }
-
-    public MenadzerRestorana addKonfiguracija(KonfiguracijaStolova konfiguracijaStolova) {
-        this.konfiguracijas.add(konfiguracijaStolova);
-        konfiguracijaStolova.setMenadzerRestorana(this);
-        return this;
-    }
-
-    public MenadzerRestorana removeKonfiguracija(KonfiguracijaStolova konfiguracijaStolova) {
-        this.konfiguracijas.remove(konfiguracijaStolova);
-        konfiguracijaStolova.setMenadzerRestorana(null);
-        return this;
-    }
-
-    public void setKonfiguracijas(Set<KonfiguracijaStolova> konfiguracijaStolova) {
-        this.konfiguracijas = konfiguracijaStolova;
-    }
-
-    public Restoran getMenadzerZaRestoran() {
-        return menadzerZaRestoran;
-    }
-
-    public MenadzerRestorana menadzerZaRestoran(Restoran restoran) {
-        this.menadzerZaRestoran = restoran;
-        return this;
-    }
-
-    public void setMenadzerZaRestoran(Restoran restoran) {
-        this.menadzerZaRestoran = restoran;
     }
     // jhipster-needle-entity-add-getters-setters - Jhipster will add getters and setters here, do not remove
 
@@ -169,11 +120,11 @@ public class MenadzerRestorana implements Serializable {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        MenadzerRestorana menadzerRestorana = (MenadzerRestorana) o;
-        if (menadzerRestorana.getId() == null || getId() == null) {
+        MenadzerSistema menadzerSistema = (MenadzerSistema) o;
+        if (menadzerSistema.getId() == null || getId() == null) {
             return false;
         }
-        return Objects.equals(getId(), menadzerRestorana.getId());
+        return Objects.equals(getId(), menadzerSistema.getId());
     }
 
     @Override
@@ -183,7 +134,7 @@ public class MenadzerRestorana implements Serializable {
 
     @Override
     public String toString() {
-        return "MenadzerRestorana{" +
+        return "MenadzerSistema{" +
             "id=" + getId() +
             ", ime='" + getIme() + "'" +
             ", prezime='" + getPrezime() + "'" +

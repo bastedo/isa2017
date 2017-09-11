@@ -23,8 +23,27 @@ entity ZahtevZaPrijateljstvo {
 	prihvacen Boolean,
     odbijen Boolean,
 }
+entity Prijatelji {
+	idGosta1 Integer,
+    idGosta2 Integer,
+	postalanZahtev LocalDate,
+    prihvacenZahtev LocalDate,
+
+}
 
 entity MenadzerRestorana {
+	ime String,
+    prezime String,
+    email String,
+    lozinka String,
+}
+entity Ponudjac {
+	ime String,
+    prezime String,
+    email String,
+    lozinka String,
+}
+entity MenadzerSistema {
 	ime String,
     prezime String,
     email String,
@@ -149,6 +168,12 @@ relationship OneToOne {
     
     Ocena {gost} to Gost,
     
+    Zaposleni {userID} to User,
+    Gost {userID} to User,
+    MenadzerRestorana {userID} to User,
+    MenadzerSistema {userID} to User,
+    Ponudjac {userID} to User,
+    
     Restoran {konfiguracijaStolova} to KonfiguracijaStolova,
     
     Restoran {jeovnik} to Jelovnik,
@@ -156,6 +181,10 @@ relationship OneToOne {
         
     Zaposleni {konfiguracijaStolova} to KonfiguracijaStolova
 
+
+}
+relationship ManyToMany {
+	Gost {prijatelji} to Gost
 
 }
 relationship OneToMany {

@@ -5,9 +5,9 @@
         .module('isa2017App')
         .controller('ZaposleniDialogController', ZaposleniDialogController);
 
-    ZaposleniDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', '$q', 'entity', 'Zaposleni', 'KonfiguracijaStolova', 'RasporedSmenaZaSankere', 'RasporedSmenaZaKonobare', 'RasporedSmenaZaKuvare', 'Racun', 'Restoran'];
+    ZaposleniDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', '$q', 'entity', 'Zaposleni', 'User', 'KonfiguracijaStolova', 'RasporedSmenaZaSankere', 'RasporedSmenaZaKonobare', 'RasporedSmenaZaKuvare', 'Racun', 'Restoran'];
 
-    function ZaposleniDialogController ($timeout, $scope, $stateParams, $uibModalInstance, $q, entity, Zaposleni, KonfiguracijaStolova, RasporedSmenaZaSankere, RasporedSmenaZaKonobare, RasporedSmenaZaKuvare, Racun, Restoran) {
+    function ZaposleniDialogController ($timeout, $scope, $stateParams, $uibModalInstance, $q, entity, Zaposleni, User, KonfiguracijaStolova, RasporedSmenaZaSankere, RasporedSmenaZaKonobare, RasporedSmenaZaKuvare, Racun, Restoran) {
         var vm = this;
 
         vm.zaposleni = entity;
@@ -15,6 +15,7 @@
         vm.datePickerOpenStatus = {};
         vm.openCalendar = openCalendar;
         vm.save = save;
+        vm.users = User.query();
         vm.konfiguracijastolova = KonfiguracijaStolova.query({filter: 'zaposleni-is-null'});
         $q.all([vm.zaposleni.$promise, vm.konfiguracijastolova.$promise]).then(function() {
             if (!vm.zaposleni.konfiguracijaStolova || !vm.zaposleni.konfiguracijaStolova.id) {

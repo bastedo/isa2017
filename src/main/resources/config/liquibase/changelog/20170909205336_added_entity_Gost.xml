@@ -37,9 +37,22 @@
             <column name="lozinka" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
-
+            <column name="userid_id" type="bigint">
+                <constraints unique="true" nullable="true" />
+            </column>
             <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
         </createTable>
+        
+        <createTable tableName="gost_prijatelji">
+            <column name="prijateljis_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="gosts_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addPrimaryKey columnNames="gosts_id, prijateljis_id" tableName="gost_prijatelji"/>
         
     </changeSet>
     <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here, do not remove-->

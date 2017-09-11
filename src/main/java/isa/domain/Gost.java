@@ -36,6 +36,10 @@ public class Gost implements Serializable {
     @Column(name = "lozinka")
     private String lozinka;
 
+    @OneToOne
+    @JoinColumn(unique = true)
+    private User userID;
+
     @OneToMany(mappedBy = "rezervisao")
     @JsonIgnore
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
@@ -45,6 +49,13 @@ public class Gost implements Serializable {
     @JsonIgnore
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     private Set<ZahtevZaPrijateljstvo> poslaoZahtevs = new HashSet<>();
+
+    @ManyToMany
+    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
+    @JoinTable(name = "gost_prijatelji",
+               joinColumns = @JoinColumn(name="gosts_id", referencedColumnName="id"),
+               inverseJoinColumns = @JoinColumn(name="prijateljis_id", referencedColumnName="id"))
+    private Set<Gost> prijateljis = new HashSet<>();
 
     // jhipster-needle-entity-add-field - Jhipster will add fields here, do not remove
     public Long getId() {
@@ -107,6 +118,19 @@ public class Gost implements Serializable {
         this.lozinka = lozinka;
     }
 
+    public User getUserID() {
+        return userID;
+    }
+
+    public Gost userID(User user) {
+        this.userID = user;
+        return this;
+    }
+
+    public void setUserID(User user) {
+        this.userID = user;
+    }
+
     public Set<Rezervacija> getRezervacijes() {
         return rezervacijes;
     }
@@ -155,6 +179,29 @@ public class Gost implements Serializable {
 
     public void setPoslaoZahtevs(Set<ZahtevZaPrijateljstvo> zahtevZaPrijateljstvos) {
         this.poslaoZahtevs = zahtevZaPrijateljstvos;
+    }
+
+    public Set<Gost> getPrijateljis() {
+        return prijateljis;
+    }
+
+    public Gost prijateljis(Set<Gost> gosts) {
+        this.prijateljis = gosts;
+        return this;
+    }
+
+    public Gost addPrijatelji(Gost gost) {
+        this.prijateljis.add(gost);
+        return this;
+    }
+
+    public Gost removePrijatelji(Gost gost) {
+        this.prijateljis.remove(gost);
+        return this;
+    }
+
+    public void setPrijateljis(Set<Gost> gosts) {
+        this.prijateljis = gosts;
     }
     // jhipster-needle-entity-add-getters-setters - Jhipster will add getters and setters here, do not remove
 
